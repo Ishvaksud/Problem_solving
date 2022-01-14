@@ -1,0 +1,19 @@
+##the number of chocolates Bobby can eat 
+
+
+t=int(input())
+for i in range(t):
+    n,c,m=map(int, input().split())
+    count=0
+    bought=int(n/c)
+    count=count+bought
+    wrappers=bought
+    while wrappers>=m:
+        bought=int(wrappers/m)
+        count=count+bought
+        remainder=wrappers%m
+        wrappers=bought+remainder
+    print(count)
+    
+        
+        
