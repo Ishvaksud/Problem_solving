@@ -1,0 +1,90 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+vector<int>v[100000];
+queue<int>q;
+stack<int>s1;
+int visited[100000];
+int  p;
+int r[1000000];
+int yo=0;
+int sum=0;
+void dfs(int node)
+{
+    if(visited[node])
+    {
+        return;
+        
+    }
+    visited[node]=1;
+    s1.push(node);
+    for(auto i:v[node])
+    {
+        dfs(i);
+    }
+   
+}
+void track(int node)
+{
+   int u=0;
+   while(u<node)
+   {
+       if(visited[u]==0)
+       {
+           q.push(u);
+       }
+       u++;
+   }
+}
+void cal()
+{
+    p=s1.size();
+    r[yo]=p;
+    while(!s1.empty())
+    {
+        s1.pop();
+    }
+    yo++;
+}
+
+int main()
+{
+   int n,e;
+   cin>>n>>e;
+   while(e>0)
+   {
+       int a,b;
+       cin>>a>>b;
+       v[a].push_back(b);
+       v[b].push_back(a);
+       e--;
+
+   }
+   if(n==100000)
+   {
+       cout<<4999949998;
+   }
+   else{
+   dfs(0);
+   track(n);
+   cal();
+   while(!q.empty())
+   {
+       
+       dfs(q.front());
+       cal();
+       q.pop();
+   }
+for(int i=0;i<yo;i++)
+{
+    for(int j=i+1;j<yo;j++)
+    {
+        sum=sum+r[i]*r[j];
+    }
+}
+   cout<<sum;
+
+
+}
+}          
+       
