@@ -1,0 +1,52 @@
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+     float x;
+     int c,f,k=0;
+     char a[1000][1000];
+     string s;
+     cin>>s;
+     x=sqrt(s.length());
+     c=ceil(x);
+     f=floor(x);
+     if(c*f<s.length())
+     {
+         if(c<f)
+         {
+             c++;
+         }
+         else
+         {
+             f++;
+         }
+     }
+     
+     for(int i=0;i<f;i++)
+     {
+         for(int j=0;j<c;j++)
+         {
+             a[i][j]=s[k];
+             k++;
+         }
+         
+     }
+     for(int m=0;m<c;m++)
+     {
+        
+         for(int v=0;v<f;v++)
+         {
+             int idx =  m + v * c;
+             if(idx<s.length())
+             {
+                  cout<<a[v][m];
+             }
+           
+         }
+         cout<<" ";
+     }
+     
+}
