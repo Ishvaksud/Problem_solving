@@ -1,0 +1,13 @@
+
+ #include<stdio.h>
+ #include<stdlib.h>
+ #include<string.h>
+ int main()
+ {
+int a,b,c;
+char tt[4];
+scanf("%d:%d:%d%s",&a,&b,&c,tt);
+if(strcmp(tt,"PM")==0&&a!=12)a+=12;
+if(strcmp(tt,"AM")==0&&a==12)a=0;
+printf("%02d:%02d:%02d",a,b,c);
+ }
