@@ -1,0 +1,17 @@
+
+
+n=int(input())
+list1= list(map(int, input().split()))
+end=n;
+list1.sort()
+count1=n
+while(len(list1)>0):
+    value=list1[0]
+    if value==0:
+        list1.remove(value)
+        count1=count1-1
+    else:
+        print(count1)
+        for i in range(len(list1)):
+            list1[i]=list1[i]-value
+        
