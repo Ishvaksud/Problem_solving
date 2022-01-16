@@ -1,0 +1,33 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int i,a,b,c,q,m,n,k,j;
+scanf("%d",&q);
+for ( i = 0; i < q; i++)
+{
+   scanf("%d %d %d",&a,&b,&c);
+
+m=abs(c-a);
+n=abs(c-b);
+if (m>n)
+{
+    printf("Cat B\n");
+
+}
+else if (n>m)
+{
+   printf("Cat A\n");
+
+}
+else if(m==n)
+{
+  printf("Mouse C\n");
+ 
+}
+
+}
+
+
+}  
