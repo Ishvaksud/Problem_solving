@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    long long int n,m,k,count=0;
+    cin>>n>>m>>k;
+    for(int i=n;i<=m;i++)
+    {
+       long long int difference;
+       long long int reverse=0;
+       long long int p=i;
+       while(p!=0)
+       {
+           reverse=reverse*10+(p%10);
+           p=p/10;
+       }
+        if(abs(reverse-i)%k==0)
+        {
+            count++;
+        }
+          
+    }
+    cout<<count;
+}
