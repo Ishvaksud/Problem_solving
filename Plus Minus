@@ -1,0 +1,37 @@
+
+#include<stdio.h>
+int main()
+{
+    int n,i,a[100];
+    float positive=0,negative=0,zero=0,s,r,t;
+    scanf("%d",&n);
+    for (i = 0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for (i =0; i <n; i++)
+    {
+        
+    if(a[i]>0)
+    {
+        positive++;
+    }
+    else if (a[i]<0)
+    {
+        negative++;
+    }
+    else
+    {
+       zero++;
+    }
+    }
+    
+    s=positive/n;
+    r=negative/n;
+    t=zero/n;
+    printf("%5f\n",s);
+    printf("%5f\n",r);
+    printf("%5f\n",t);
+    
+}
+    
