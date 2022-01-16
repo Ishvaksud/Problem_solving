@@ -1,0 +1,33 @@
+#return the  maximum topics and the number of teams that know that many topics 
+
+
+n,m=map(int,input().split())
+value={}
+count=-1
+for i in range(n):
+    k=input()
+    count=count+1
+    store=set()
+    for s in range(len(k)):
+        if k[s]!="0":
+            store.add(s)
+        value[count]=store
+value2={}
+maximum=0
+for j in range(len(value)):
+    for r in range(j+1,len(value)):
+        t=value[j]|value[r]
+        value2[(j,r)]=len(t)
+        f=len(t)
+        if f>maximum:
+            maximum=f
+z=0
+for key,value in value2.items():
+    if maximum==value:
+        z=z+1
+
+print(maximum)
+print(z)
+        
+        
+        
